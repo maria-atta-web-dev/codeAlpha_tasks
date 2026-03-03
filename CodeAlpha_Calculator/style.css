@@ -1,0 +1,267 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: #d9e0eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* Calculator */
+.calculator {
+    width: 380px;
+    background: #ffffff;
+    border-radius: 35px;
+    padding: 22px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+    padding: 0 5px;
+}
+
+.name {
+    font-weight: 700;
+    font-size: 16px;
+    color: #2c3e50;
+}
+
+.social a {
+    text-decoration: none;
+    font-size: 16px;
+    margin-left: 12px;
+    color: #3498db;
+}
+
+.display {
+    background: #ecf0f1;
+    border-radius: 22px;
+    padding: 18px 16px;
+    margin-bottom: 22px;
+    text-align: right;
+    border: 2px solid #bdc3c7;
+}
+
+.history {
+    font-size: 12px;
+    color: #7f8c8d;
+    min-height: 18px;
+    margin-bottom: 4px;
+}
+
+.current {
+    font-size: 42px;
+    font-weight: 800;
+    color: #2c3e50;
+    line-height: 1.2;
+    min-height: 50px;
+    word-break: break-all;
+}
+
+.preview {
+    font-size: 14px;
+    color: #3498db;
+    min-height: 20px;
+    margin-top: 3px;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.btn {
+    aspect-ratio: 1/1;
+    border: none;
+    border-radius: 22px;
+    font-size: 24px;
+    font-weight: 600;
+    cursor: pointer;
+    background: #ffffff;
+    color: #2c3e50;
+    border: 2px solid #bdc3c7;
+    box-shadow: 0 4px 0 #95a5a6;
+    transition: 0.05s linear;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.zero {
+    aspect-ratio: 2/1;
+    grid-column: span 2;
+}
+
+.btn:active {
+    transform: translateY(4px);
+    box-shadow: 0 1px 0 #95a5a6;
+}
+
+.operator {
+    background: #3498db;
+    color: white;
+    border-color: #2980b9;
+    box-shadow: 0 4px 0 #2980b9;
+}
+
+.function {
+    background: #e74c3c;
+    color: white;
+    border-color: #c0392b;
+    box-shadow: 0 4px 0 #c0392b;
+}
+
+.equals {
+    background: #2ecc71;
+    color: white;
+    border-color: #27ae60;
+    box-shadow: 0 4px 0 #27ae60;
+    font-size: 28px;
+}
+
+.footer {
+    text-align: center;
+    font-size: 12px;
+    color: #7f8c8d;
+    padding-top: 8px;
+    border-top: 2px solid #ecf0f1;
+}
+
+/* Tips Panels */
+.tips-panel {
+    width: 140px;
+    background: #ffffff;
+    border-radius: 25px;
+    padding: 18px 12px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.tips-header {
+    text-align: center;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #ecf0f1;
+}
+
+.tips-icon {
+    font-size: 20px;
+    display: block;
+    margin-bottom: 3px;
+}
+
+.tips-title {
+    font-weight: 700;
+    font-size: 12px;
+    color: #2c3e50;
+    letter-spacing: 0.5px;
+}
+
+.tips-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tip-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+}
+
+.key {
+    background: #2c3e50;
+    color: white;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 6px;
+    min-width: 55px;
+    text-align: center;
+    font-family: monospace;
+    font-size: 10px;
+    box-shadow: 0 2px 0 #1a252f;
+}
+
+.desc {
+    color: #34495e;
+    font-weight: 500;
+    font-size: 10px;
+}
+
+.tips-footer {
+    margin-top: 15px;
+    padding-top: 8px;
+    border-top: 2px solid #ecf0f1;
+    text-align: center;
+    font-size: 10px;
+    font-weight: 600;
+    color: #3498db;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .tips-panel {
+        width: 380px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .tips-header {
+        border-bottom: none;
+        border-right: 2px solid #ecf0f1;
+        padding-right: 15px;
+        margin-bottom: 0;
+    }
+    
+    .tips-content {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    
+    .tip-row {
+        min-width: 100px;
+    }
+}
+
+@media (max-width: 450px) {
+    .calculator, .tips-panel {
+        width: 340px;
+    }
+    
+    .current {
+        font-size: 36px;
+    }
+    
+    .btn {
+        font-size: 22px;
+    }
+}

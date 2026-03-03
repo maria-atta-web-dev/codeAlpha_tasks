@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator with Quick Tips | Maria Atta</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Left Tips Panel -->
+        <div class="tips-panel left">
+            <div class="tips-header">
+                <span class="tips-icon">⌨️</span>
+                <span class="tips-title">KEYBOARD</span>
+            </div>
+            <div class="tips-content">
+                <div class="tip-row">
+                    <span class="key">0-9</span>
+                    <span class="desc">Numbers</span>
+                </div>
+                <div class="tip-row">
+                    <span class="key">+ - * /</span>
+                    <span class="desc">Operators</span>
+                </div>
+                <div class="tip-row">
+                    <span class="key">Enter</span>
+                    <span class="desc">= Calculate</span>
+                </div>
+                <div class="tip-row">
+                    <span class="key">Esc</span>
+                    <span class="desc">Clear (C)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Calculator -->
+        <div class="calculator">
+            <div class="header">
+                <span class="name">MARIA'S CALC</span>
+                <div class="social">
+                    <a href="https://github.com/maria-atta-web-dev">Github</a>
+                    <a href="https://www.linkedin.com/in/maria-atta-98a436370/">Linkedin</a>
+                </div>
+            </div>
+
+            <div class="display">
+                <div class="history" id="history"></div>
+                <div class="current" id="display">0</div>
+                <div class="preview" id="preview"></div>
+            </div>
+
+            <div class="buttons">
+                <button class="btn function" onclick="calc.click('C')">C</button>
+                <button class="btn function" onclick="calc.click('⌫')">⌫</button>
+                <button class="btn function" onclick="calc.click('%')">%</button>
+                <button class="btn operator" onclick="calc.click('/')">÷</button>
+
+                <button class="btn number" onclick="calc.click('7')">7</button>
+                <button class="btn number" onclick="calc.click('8')">8</button>
+                <button class="btn number" onclick="calc.click('9')">9</button>
+                <button class="btn operator" onclick="calc.click('*')">×</button>
+
+                <button class="btn number" onclick="calc.click('4')">4</button>
+                <button class="btn number" onclick="calc.click('5')">5</button>
+                <button class="btn number" onclick="calc.click('6')">6</button>
+                <button class="btn operator" onclick="calc.click('-')">−</button>
+
+                <button class="btn number" onclick="calc.click('1')">1</button>
+                <button class="btn number" onclick="calc.click('2')">2</button>
+                <button class="btn number" onclick="calc.click('3')">3</button>
+                <button class="btn operator" onclick="calc.click('+')">+</button>
+
+                <button class="btn number zero" onclick="calc.click('0')">0</button>
+                <button class="btn number" onclick="calc.click('00')">00</button>
+                <button class="btn number" onclick="calc.click('.')">.</button>
+                <button class="btn equals" onclick="calc.click('=')">=</button>
+            </div>
+
+            <div class="footer">
+                <span>© Maria Atta 2026</span>
+            </div>
+        </div>
+
+        <!-- Right Tips Panel -->
+        <div class="tips-panel right">
+            <div class="tips-header">
+                <span class="tips-icon">⚡</span>
+                <span class="tips-title">QUICK</span>
+            </div>
+            <div class="tips-content">
+                <div class="tip-row">
+                    <span class="key">Backspace</span>
+                    <span class="desc">Delete</span>
+                </div>
+                <div class="tip-row">
+                    <span class="key">.</span>
+                    <span class="desc">Decimal</span>
+                </div>
+                <div class="tip-row">
+                    <span class="key">%</span>
+                    <span class="desc">Percent</span>
+                </div>
+                <div class="tip-row">
+                    <span class="key">00</span>
+                    <span class="desc">Double zero</span>
+                </div>
+            </div>
+            <div class="tips-footer">
+                Just start typing! ✨
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

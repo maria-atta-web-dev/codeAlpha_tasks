@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maria Atta | Dreamscape Gallery</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- jsPDF Library for PDF generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  </head>
+  <body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Preloader -->
+    <div class="preloader">
+      <div class="loader"></div>
+      <div class="loader-text">Maria's Gallery</div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="logo">
+          <span class="logo-text">M</span>
+          <span class="logo-full">aria Atta</span>
+        </div>
+        <div class="nav-links">
+          <a href="#home" class="active">Home</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#categories">Categories</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="nav-right">
+          <a
+            href="https://github.com/maria-atta-web-dev"
+            target="_blank"
+            class="social-icon"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/maria-atta-98a436370/"
+            target="_blank"
+            class="social-icon"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <div class="hero-badge">Welcome to My World</div>
+        <h1 class="glitch" data-text="Dreamscape Gallery">
+          Dreamscape Gallery
+        </h1>
+        <p class="hero-subtitle">
+          Curating visual stories through the lens of creativity
+        </p>
+        <div class="hero-buttons">
+          <a href="#gallery" class="btn btn-primary"
+            >Explore Gallery <i class="fas fa-arrow-right"></i
+          ></a>
+          <a href="#about" class="btn btn-outline"
+            >About Me <i class="fas fa-user"></i
+          ></a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number" data-target="5">0</span>
+            <span class="stat-label">Projects</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="10">0</span>
+            <span class="stat-label">Photos</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="1">0</span>
+            <span class="stat-label">Years</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+      </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="categories">
+      <div class="section-header">
+        <span class="section-subtitle">Explore By</span>
+        <h2 class="section-title">Categories</h2>
+        <div class="title-decoration"></div>
+      </div>
+      <div class="category-filters">
+        <button class="filter-btn active" data-filter="all">
+          <i class="fas fa-compass"></i><span>All</span>
+        </button>
+        <button class="filter-btn" data-filter="nature">
+          <i class="fas fa-leaf"></i><span>Nature</span>
+        </button>
+        <button class="filter-btn" data-filter="city">
+          <i class="fas fa-city"></i><span>City</span>
+        </button>
+        <button class="filter-btn" data-filter="technology">
+          <i class="fas fa-microchip"></i><span>Tech</span>
+        </button>
+        <button class="filter-btn" data-filter="architecture">
+          <i class="fas fa-building"></i><span>Architecture</span>
+        </button>
+        <button class="filter-btn" data-filter="art">
+          <i class="fas fa-palette"></i><span>Art</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+      <div class="gallery-container">
+        <div class="gallery-grid" id="gallery-grid"></div>
+      </div>
+      <div class="load-more">
+        <button class="btn-load" id="loadMore">
+          <span>Load More</span><i class="fas fa-sync-alt"></i>
+        </button>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+      <div class="about-container">
+        <div class="about-image">
+          <div class="image-frame">
+            <img
+              src="assets/profile.png"
+              alt="Maria Atta"
+              onerror="
+                this.src =
+                  'https://via.placeholder.com/400x400/6C5CE7/ffffff?text=Maria+Atta'
+              "
+            />
+            <div class="frame-decoration"></div>
+          </div>
+          <div class="experience-badge">
+            <span class="years">1+</span>
+            <span class="text">Years of Creativity</span>
+          </div>
+        </div>
+        <div class="about-content">
+          <span class="about-subtitle">Who Am I?</span>
+          <h2>Maria Atta</h2>
+          <h3>Frontend Developer & Creative Designer</h3>
+          <p class="about-description">
+            BSCS student with hands-on academic experience in Web Technologies
+            and Data Structures & Algorithms. Familiar with building structured
+            web projects and implementing core DSA concepts. Interested in
+            remote technical and online support roles.
+          </p>
+          <div class="skills">
+            <div class="skill">
+              <span class="skill-name">HTML5</span>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 95%"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <span class="skill-name">CSS3</span>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 90%"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <span class="skill-name">JavaScript</span>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 85%"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <span class="skill-name">SQL</span>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 75%"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <span class="skill-name">Data Structures</span>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 80%"></div>
+              </div>
+            </div>
+          </div>
+          <div class="about-buttons">
+            <a href="#contact" class="btn btn-primary">Let's Talk</a>
+            <button
+              class="btn btn-primary btn-outline download-cv-btn"
+              onclick="downloadPDFResume()"
+            >
+              <i class="fas fa-magic"></i> Download Amazing CV (PDF)
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <div class="contact-container">
+        <div class="section-header">
+          <span class="section-subtitle">Get In Touch</span>
+          <h2 class="section-title">Contact Me</h2>
+        </div>
+        <div class="contact-content">
+          <div class="contact-info">
+            <div class="contact-card">
+              <i class="fas fa-envelope"></i>
+              <h3>Email</h3>
+              <p>mariaatta33@gmail.com</p>
+            </div>
+            <div class="contact-card">
+              <i class="fas fa-map-marker-alt"></i>
+              <h3>Location</h3>
+              <p>Rawalpindi, Pakistan</p>
+            </div>
+          </div>
+          <form class="contact-form" id="contactForm">
+            <input type="text" placeholder="Your Name" required />
+            <input type="email" placeholder="Your Email" required />
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <span class="logo-text">M</span><span>aria Atta</span>
+        </div>
+        <div class="footer-links">
+          <a href="#home">Home</a><a href="#gallery">Gallery</a
+          ><a href="#about">About</a><a href="#contact">Contact</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://github.com/maria-atta-web-dev" target="_blank"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/maria-atta-98a436370/"
+            target="_blank"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          &copy; 2026 Maria Atta. All rights reserved. | Built with ❤️ for
+          CodeAlpha
+        </p>
+      </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+      <button class="lightbox-close"><i class="fas fa-times"></i></button>
+      <button class="lightbox-prev"><i class="fas fa-chevron-left"></i></button>
+      <button class="lightbox-next">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+      <div class="lightbox-controls">
+        <button
+          class="lightbox-autoplay"
+          id="autoplayBtn"
+          title="Start Slideshow"
+        >
+          <i class="fas fa-play"></i>
+        </button>
+        <div class="autoplay-speed" id="speedControl" style="display: none">
+          <label for="speedSlider">Speed:</label>
+          <input
+            type="range"
+            id="speedSlider"
+            min="1"
+            max="5"
+            value="3"
+            step="0.5"
+          />
+          <span id="speedValue">3.0s</span>
+        </div>
+      </div>
+      <div class="lightbox-content">
+        <img src="" alt="" class="lightbox-image" id="lightbox-img" />
+        <div class="lightbox-info">
+          <h3 class="lightbox-title" id="lightbox-title"></h3>
+          <p class="lightbox-category" id="lightbox-category"></p>
+          <div class="image-counter" id="imageCounter">
+            <span id="currentImageIndex">1</span> /
+            <span id="totalImages">18</span>
+          </div>
+        </div>
+      </div>
+      <div class="autoplay-progress" id="autoplayProgress">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="pdf-generator.js"></script>
+  </body>
+</html>

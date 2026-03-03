@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✨ VIBE PLAYER | Maria's Music Player</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="music-player glass">
+        <!-- Animated Background Gradient -->
+        <div class="gradient-sphere"></div>
+        <div class="gradient-sphere two"></div>
+        
+        <!-- Header with Glowing Effect -->
+        <div class="player-header">
+            <div class="logo">
+                <i class="fas fa-satellite-dish"></i>
+                <h2>VIBE<span>PLAYER</span></h2>
+            </div>
+            <div class="header-badge">
+                <i class="fas fa-wave-square"></i>
+                <span>LIVE</span>
+            </div>
+        </div>
+
+        <!-- Album Art with 3D Hover -->
+        <div class="album-wrapper">
+            <div class="album-art" id="albumArt">
+                <img src="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?w=600&h=600&fit=crop" alt="Album Art" id="albumImage">
+                <div class="play-overlay">
+                    <i class="fas fa-play" id="overlayPlayIcon"></i>
+                </div>
+                <div class="visualizer" id="visualizer">
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Song Info with Marquee for Long Text -->
+        <div class="song-info">
+            <div class="title-wrapper">
+                <h3 id="songTitle">Blinding Lights</h3>
+                <i class="fas fa-check-circle verified"></i>
+            </div>
+            <p id="songArtist">The Weeknd</p>
+        </div>
+
+        <!-- Time & Progress with Glowing Bar -->
+        <div class="progress-area" id="progressArea">
+            <div class="time">
+                <span id="currentTime">0:00</span>
+                <span class="time-separator">/</span>
+                <span id="duration">3:20</span>
+            </div>
+            <div class="progress-bar" id="progressBar">
+                <div class="progress" id="progress"></div>
+                <div class="progress-glow"></div>
+            </div>
+        </div>
+
+        <!-- Main Controls with Neomorphic Design -->
+        <div class="controls">
+            <button id="prevBtn" class="control-btn" title="Previous">
+                <i class="fas fa-backward-step"></i>
+            </button>
+            <button id="playBtn" class="play-btn" title="Play">
+                <i class="fas fa-play"></i>
+            </button>
+            <button id="nextBtn" class="control-btn" title="Next">
+                <i class="fas fa-forward-step"></i>
+            </button>
+        </div>
+
+        <!-- Volume Control with Gradient -->
+        <div class="volume-section">
+            <div class="volume-control">
+                <i class="fas fa-volume-high" id="volumeIcon"></i>
+                <div class="volume-slider-container">
+                    <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="0.7">
+                </div>
+                <span class="volume-percent" id="volumePercent">70%</span>
+            </div>
+        </div>
+
+        <!-- Playlist with Album Art -->
+        <div class="playlist">
+            <div class="playlist-header">
+                <h4><i class="fas fa-list-radio"></i> TRACKLIST</h4>
+                <span class="playlist-count" id="playlistCount">4 songs</span>
+            </div>
+            <ul id="playlistItems">
+                <!-- Will be populated by JavaScript -->
+            </ul>
+        </div>
+
+        <!-- Footer with Signature -->
+        <div class="footer">
+            <div class="footer-content">
+                <span class="made-with">✨ crafted with precision</span>
+                <span class="internship">Created By Maria Atta</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
